@@ -12,10 +12,10 @@ label,p {
 	color: red;
 }
 
-.newterm {
+.newTerm {
 
 	margin-top:10px;
-	background:blue;
+	background: red;
 /*Why can't I change button color to blue??? or change margins etc*/
 clear:both;
 }
@@ -23,11 +23,11 @@ clear:both;
 .images,p {
 	float:left
 }
-/*.giphydiv  {
+.giphydiv  {
 
 	border-style: solid;
 	border-width: 5px;
 	border-color: red;
-}*/
+}
 
 /*Why can't I change border properties of giphydiv*/

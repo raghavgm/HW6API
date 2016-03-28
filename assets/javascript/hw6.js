@@ -1,4 +1,4 @@
-
+$(document).ready(function() {
 var random = ["cockatiel","ferrari","parrot","lion","tupac","grumpy cat","DMX"]
 
 
@@ -44,6 +44,9 @@ $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 				var image = $("<img>")
 				image.attr("src", imageLink)
 				image.addClass("images")
+				image.attr("data-name","giphy")
+				image.attr("data-still",results[i].images.fixed_height_still.url)
+				image.attr("data-animate",results[i].images.fixed_height.url)
 				$(".giphydiv").prepend(image)
 				$(".giphydiv").prepend("<p>rating: " +results[i].rating+ "</p>")
 
@@ -77,7 +80,33 @@ $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 
 $(document).on("click", ".newTerm", getInfo);//Function for allowing us to get giphys from the dynamically created buttons.
 
-$(document).on("click", ".images", stillGiphy)//Function for clicking on dynamically created giphys in order to make them still.
+$(document).on("click", ".images", function() {
+if ($(this).data("name")=="giphy") {
+
+	$(this).attr("src", $(this).data("still"));
+	$(this).attr("data-name","still");
+	
+
+}
+
+else if (($(this).data("name")=="still")) {
+		$(this).attr("src", $(this).data("animate"));
+		$(this).attr("date-name", "giphy");
+
+	
+};
+
+
+
+});
+
+
+});
+
+
+
+
+//Function for clicking on dynamically created giphys in order to make them still.
 
 
 
